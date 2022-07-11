@@ -28,6 +28,36 @@
   color: #61dafb;
 }
 
+.text-center{
+ text-align:center;
+}
+
+
+#calculator {
+    width: 120px;
+    border: 1px solid;
+}
+
+    #calculator tr span {
+        border: 1px solid;
+        margin: 2px;
+        display: block;
+        cursor: pointer;
+    }
+
+    #calculator .calculatorButton {
+        border: 1px solid;
+        margin: 2px;
+        display: block;
+        cursor: pointer;
+    }
+
+    #calculator #visor {
+        border: 1px solid;
+        text-align: right;
+        padding: 5px;
+    }
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
