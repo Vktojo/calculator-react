@@ -1,5 +1,9 @@
 export default function Button({ func, char, isOperation }) {
-    var cName = isOperation == "true" ? "operator" : "";
+    if (char == "") {
+        return "";
+    }
+
+    var cName = isOperation == "True" ? "operator" : "";
     return (
         <span
             className={cName}

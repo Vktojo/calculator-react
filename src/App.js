@@ -1,7 +1,7 @@
 import './App.css';
 import { useReducer } from "react"
 import { useState } from 'react';
-import Button from './Button'
+import ButtonRow from './ButtonRow'
 
 function App() {
     const [visor, setVisor] = useState(0);
@@ -86,37 +86,11 @@ function App() {
                         <tr>
                             <td colSpan="4" id="visor">{visor}</td>
                         </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td><Button char="C" func={func} isOperation="true" /></td>
-                            <td><Button char="/" func={func} isOperation="true" /></td>
-                        </tr>
-                        <tr>
-                            <td><Button char="7" func={func} /></td>
-                            <td><Button char="8" func={func} /></td>
-                            <td><Button char="9" func={func} /></td>
-                            <td><Button char="*" func={func} isOperation="true" /></td>
-                        </tr>
-                        <tr>
-                            <td><Button char="4" func={func} /></td>
-                            <td><Button char="5" func={func} /></td>
-                            <td><Button char="6" func={func} /></td>
-                            <td><Button char="-" func={func} isOperation="true" /></td>
-
-                        </tr>
-                        <tr>
-                            <td><Button char="1" func={func} /></td>
-                            <td><Button char="2" func={func} /></td>
-                            <td><Button char="3" func={func} /></td>
-                            <td><Button char="+" func={func} isOperation="true" /></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><Button char="0" func={func} /></td>
-                            <td></td>
-                            <td><Button char="=" func={func} isOperation="true" /></td>
-                        </tr>
+                        <ButtonRow func={func} td1="" td2="" td3="C" td4="/" />
+                        <ButtonRow func={func} td1="7" td2="8" td3="9" td4="*" />
+                        <ButtonRow func={func} td1="4" td2="5" td3="6" td4="-" />
+                        <ButtonRow func={func} td1="1" td2="2" td3="3" td4="+" />
+                        <ButtonRow func={func} td1="" td2="0" td3="" td4="=" />
                     </tbody>
                 </table>
             </div>
