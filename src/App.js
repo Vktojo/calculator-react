@@ -1,12 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import { useReducer } from "react"
 import { useState } from 'react';
+import Button from './Button'
 
 function App() {
     const [visor, setVisor] = useState(0);
+    const [operation, func] = useReducer(
+        setInput,
+        {}
+    )
 
-    function setInput(d) {
-        var input = d.target.textContent;
+    function setInput(state, { input }) {
         if (input == "C") {
             setVisor("0");
             return;
@@ -52,6 +56,7 @@ function App() {
         setVisor(visor + input);
     }
 
+
     function isOperator(d) {
         var operators = ['+', '-', '*', '/', 'C', '='];
         return operators.includes(d);
@@ -82,34 +87,37 @@ function App() {
                             <td colSpan="4" id="visor">{visor}</td>
                         </tr>
                         <tr>
+                            {/*<Line p1="" p2="" p3="C" p4="/" />*/}
+                            <td><Button char="x" /></td>
                             <td></td>
-                            <td></td>
-                            <td><span onClick={setInput} className="operator">C</span></td>
-                            <td><span onClick={setInput} className="operator">/</span></td>
+                            <td><Button char="C" func={func} isOperation="true" /></td>
+                            <td><Button char="/" func={func} isOperation="true" /></td>
+
                         </tr>
                         <tr>
-                            <td><span onClick={setInput}>7</span></td>
-                            <td><span onClick={setInput}>8</span></td>
-                            <td><span onClick={setInput}>9</span></td>
-                            <td><span onClick={setInput} className="operator">*</span></td>
+                            <td><Button char="7" func={func} /></td>
+                            <td><Button char="8" func={func} /></td>
+                            <td><Button char="9" func={func} /></td>
+                            <td><Button char="*" func={func} isOperation="true" /></td>
                         </tr>
                         <tr>
-                            <td><span onClick={setInput}>4</span></td>
-                            <td><span onClick={setInput}>5</span></td>
-                            <td><span onClick={setInput}>6</span></td>
-                            <td><span onClick={setInput} className="operator">-</span></td>
+                            <td><Button char="4" func={func} /></td>
+                            <td><Button char="5" func={func} /></td>
+                            <td><Button char="6" func={func} /></td>
+                            <td><Button char="-" func={func} isOperation="true" /></td>
+
                         </tr>
                         <tr>
-                            <td><span onClick={setInput}>1</span></td>
-                            <td><span onClick={setInput}>2</span></td>
-                            <td><span onClick={setInput}>3</span></td>
-                            <td><span onClick={setInput} className="operator">+</span></td>
+                            <td><Button char="1" func={func} /></td>
+                            <td><Button char="2" func={func} /></td>
+                            <td><Button char="3" func={func} /></td>
+                            <td><Button char="+" func={func} isOperation="true" /></td>
                         </tr>
                         <tr>
                             <td></td>
-                            <td><span onClick={setInput}>0</span></td>
+                            <td><Button char="0" func={func} /></td>
                             <td></td>
-                            <td><span onClick={setInput} className="operator">=</span></td>
+                            <td><Button char="=" func={func} isOperation="true" /></td>
                         </tr>
                     </tbody>
                 </table>
