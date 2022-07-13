@@ -87,12 +87,10 @@ function App() {
                             <td colSpan="4" id="visor">{visor}</td>
                         </tr>
                         <tr>
-                            {/*<Line p1="" p2="" p3="C" p4="/" />*/}
-                            <td><Button char="x" /></td>
+                            <td></td>
                             <td></td>
                             <td><Button char="C" func={func} isOperation="true" /></td>
                             <td><Button char="/" func={func} isOperation="true" /></td>
-
                         </tr>
                         <tr>
                             <td><Button char="7" func={func} /></td>
